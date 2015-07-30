@@ -10,7 +10,6 @@
 
 
 
-  <meta name="date" content="2015-12-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -89,7 +88,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">29/07/2015</p>
+            <p style="margin-top: 6px; margin-left: -2px;">3/08/2015</p>
           </hgroup>
   </slide>
 
@@ -106,6 +105,17 @@
 <li><p>Esta interfaz es muy potente y nos permite (si conocemos los comandos adecuados) ejecutar y manipular cualquier proceso del sistema operativo.</p></li>
 </ul>
 
+</article></slide><slide class=''><hgroup><h2><code>pwd</code> (<em>print working directory</em>)</h2></hgroup><article  id="pwd-print-working-directory">
+
+<p>Para que el sistema no indique en qué directorio estamos actualmente ejecutamos el comando <code>pwd</code>.</p>
+
+<pre >user@mypc:~$ pwd
+/home/user</pre>
+
+<p>En los sistemas de tipo Unix, la unidades de disco no utilizan letras (en Windows, las distintas unidades se llaman <code>C:</code>, <code>D:</code>, <code>A:</code>, etc). La estructura jerárquica de directorios cuelga de una única raíz, indicada con la barra <code>/</code>.</p>
+
+<p>El directorio de trabajo de cada usuario (el equivalente a <code>Mis Documentos</code> en Windows) cuelga siempre de <code>/home</code>.</p>
+
 </article></slide><slide class=''><hgroup><h2>Rutas absolutas y rutas relativas</h2></hgroup><article  id="rutas-absolutas-y-rutas-relativas">
 
 <ul>
@@ -120,17 +130,6 @@
 <li>Dos puntos seguidos <code>..</code> indican el nivel inmediatamente superior en la jearquía de directorios.</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2><code>pwd</code> (<em>print working directory</em>)</h2></hgroup><article  id="pwd-print-working-directory">
-
-<p>Para que el sistema no indique en qué directorio estamos actualmente ejecutamos el comando <code>pwd</code>.</p>
-
-<pre >user@mypc:~$ pwd
-/home/user</pre>
-
-<p>En los sistemas de tipo Unix, la unidades de disco no utilizan letras (en Windows, las distintas unidades se llaman <code>C:</code>, <code>D:</code>, <code>A:</code>, etc). La estructura jerárquica de directorios cuelga de una única raíz, indicada con la barra <code>/</code>.</p>
-
-<p>El directorio de trabajo de cada usuario (el equivalente a <code>Mis Documentos</code> en Windows) cuelga siempre de <code>/home</code>.</p>
-
 </article></slide><slide class=''><hgroup><h2><code>ls [ARGUMENTOS] [RUTA]</code> (<em>list</em>)</h2></hgroup><article  id="ls-argumentos-ruta-list">
 
 <p>Para lista los nombres de los directorios y carpetas del directorio actual de trabajo, ejecutamos el comando <code>ls</code>.</p>
@@ -143,7 +142,7 @@ contratos facturas</pre>
 <p>Si lo ejecutamos especificando el nombre de un directorio, nos listará su contenido:</p>
 
 <pre >user@mypc:~$ ls contratos
-gas internet luz</pre>
+gas internet luz notas.txt</pre>
 
 </article></slide><slide class=''><hgroup><h2><code>ls -l</code></h2></hgroup><article  id="ls--l">
 
@@ -178,7 +177,7 @@ user@mypc:~$ cd contratos
 user@mypc:~$ pwd
 /home/user/contratos</pre>
 
-</article></slide><slide class=''><hgroup><h2><code>cd [RUTA/]DIRECTORIO</code> (<em>change dir</em>)</h2></hgroup><article  id="cd-rutadirectorio-change-dir-1">
+</article></slide><slide class=''><hgroup><h2><code>cd</code></h2></hgroup><article  id="cd">
 
 <p>Si no especificamos ni ruta ni directorio y ejecutamos simplemente <code>cd</code> se asume que el cambio de directorio se refiere al directorio del usuario, y volvemos a <code>/home/user</code>, estemos donde estemos.</p>
 
@@ -188,7 +187,7 @@ user@mypc:~$ cd
 user@mypc:~$ pwd
 /home/user</pre>
 
-</article></slide><slide class=''><hgroup><h2><code>cd [RUTA/]DIRECTORIO</code> (<em>change dir</em>)</h2></hgroup><article  id="cd-rutadirectorio-change-dir-2">
+</article></slide><slide class=''><hgroup><h2><code>cd [RUTA/]DIRECTORIO</code></h2></hgroup><article  id="cd-rutadirectorio">
 
 <p>Podemos movernos a cualquier punto de la jerarquía de directorios utilizando tanto rutas absolutas o relativas.</p>
 
@@ -199,7 +198,7 @@ user@mypc:~$ cd /usr/share/doc/java-common
 user@mypc:~$ pwd
 /usr/share/doc/java-common</pre>
 
-</article></slide><slide class=''><hgroup><h2><code>cd [RUTA/]DIRECTORIO</code> (<em>change dir</em>)</h2></hgroup><article  id="cd-rutadirectorio-change-dir-3">
+</article></slide><slide class=''><hgroup><h2><code>cd [RUTA/]DIRECTORIO</code> (<em>change dir</em>)</h2></hgroup><article  id="cd-rutadirectorio-change-dir-1">
 
 <p>Para subir un nivel (o los que sean necesarios), utilizamos el símbolo especial que hemos visto antes, los dos puntos seguidos <code>..</code></p>
 
@@ -220,8 +219,6 @@ contratos
 user@mypc:~$ mkdir papeleo
 user@mypc:~$ ls
 contratos papeleo</pre>
-
-<p>Al igual que con otros comandos, con <code>mkdir</code> también podemos utilizar rutas absolutas o relativas.</p>
 
 <p>Podemos utilizar una ruta relativa o absoluta para crear un directorio donde queramos, sin necesidad de estar situados en el directorio que lo contiene.</p>
 
@@ -285,7 +282,7 @@ user@mypc:~$ rmdir directorioBasura
 user@mypc:~$ ls
 otroDirectorio</pre>
 
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Visualizando el contenido de ficheros de texto</h2></hgroup><article  id="visualizando-el-contenido-de-ficheros-de-texto">
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Visualizando ficheros de texto</h2></hgroup><article  id="visualizando-ficheros-de-texto">
 
 </article></slide><slide class=''><hgroup><h2><code>cat [RUTA/]FICHERO</code></h2></hgroup><article  id="cat-rutafichero">
 
@@ -318,7 +315,191 @@ Pues mira, muy bien.</pre>
 <li>El comando <code>man</code> (de <em>manual</em>) nos da acceso al manual completo de cada comando.</li>
 </ul>
 
-<pre >user@mypc:~$ man cat</pre></article></slide>
+<pre >user@mypc:~$ man cat</pre>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Procesar ficheros de texto</h2></hgroup><article  id="procesar-ficheros-de-texto">
+
+</article></slide><slide class=''><hgroup><h2><code>wc [OPCIONES] [RUTA/]FICHERO</code></h2></hgroup><article  id="wc-opciones-rutafichero">
+
+<p>Para mostrar estadísticas del tamaño de un fichero de texto podemos utilizar el comando <code>wc</code>.</p>
+
+<p>Si se ejecuta sin ninguna opción, se nos muestran cuatro columnas con la siguiente información: número de líneas, número de palabras, número de caracteres y nombre del fichero.</p>
+
+<p>Por ejemplo, para imprimir por pantalla las estadísticas de todos los ficheros del directorio actual que contengan la cadena `palabras&#39; en su nombre, ejecutamos:</p>
+
+<pre >user@mypc:~$ wc palabras*
+26  26 174 palabras.txt
+21  42 317 palabras-unicas-ordenadas.txt
+21  42 317 palabras-unicas.txt
+68 110 808 total</pre>
+
+</article></slide><slide class=''><hgroup><h2><code>wc</code></h2></hgroup><article  id="wc">
+
+<p>Entre las opciones más útiles de <code>wc</code>, están:</p>
+
+<ul>
+<li><code>-l</code> imprime el número de líneas de un fichero.</li>
+<li><code>-w</code> imprime el número de palabras de un fichero.</li>
+</ul>
+
+<pre >user@mypc:~$ wc -l palabras.txt 
+26 palabras.txt 
+user@mypc:~$ wc -w palabras-unicas.txt 
+42 palabras-unicas.txt </pre>
+
+</article></slide><slide class=''><hgroup><h2><code>sort [OPCIONES] [RUTA/]FICHERO</code></h2></hgroup><article  id="sort-opciones-rutafichero">
+
+<p>Procesa un fichero de texto línea a línea y las muestra ordenadas. Las opciones determinan el tipo de ordenación empleado:</p>
+
+<ul>
+<li><code>-d</code> orden alfabético, incluso para los números.</li>
+<li><code>-n</code> orden numérico: coloca los números antes que las letras y ordena los dígitos de menor a mayor.</li>
+<li><code>-f</code> no distingue entre mayúsculas y minúsculas.</li>
+<li><code>-r</code> orden inverso.</li>
+</ul>
+
+<p>Las opciones se pueden combinar, p. ej., para ordenar un fichero numéricamente de mayor a menor podemos ejecutar <code>sort -nr FICHERO</code>.</p>
+
+</article></slide><slide class=''><hgroup><h2><code>uniq [OPCIONES] [RUTA/]FICHERO</code></h2></hgroup><article  id="uniq-opciones-rutafichero">
+
+<p>Procesa un fichero de texto línea a línea y elimina los duplicados, es decir, solo muestra una ocurrencia por línea. Algunas de las opciones más interesantes son:</p>
+
+<ul>
+<li><code>-c</code> muestra el número de ocurrencias de cada línea.</li>
+<li><code>-d</code> muestra solo las líneas duplicadas.</li>
+<li><code>-i</code> ignora las diferencias entre mayúsculas y minúsculas</li>
+</ul>
+
+<p><strong>Ojo</strong>, <code>uniq</code> solo recuerda la última línea que ha visto y, en consecuencia, sólo es capaz de eliminar líneas duplicadas cuando aparecen todas juntas unas detrás de otras. Antes de eliminar líneas duplicadas es conveniente ordenarlas con <code>sort</code>.</p>
+
+</article></slide><slide class=''><hgroup><h2><code>grep [OPCIONES] PATRÓN FICHERO</code></h2></hgroup><article  id="grep-opciones-patron-fichero">
+
+<p>Procesa un fichero de texto línea a línea e imprime solo aquellas que contengan el patrón de búsqueda especificado. Entre las opciones más interesantes, están:</p>
+
+<ul>
+<li><code>-i</code> ignora las diferencias entre mayúsculas y minúsculas</li>
+<li><code>-v</code> invierte el sentido del patrón, es decir, muestra solo las líneas que no coincidan con el patrón.</li>
+<li><code>-c</code> imprime, en lugar de las líneas, el número de ocurrencias en las que el patrón coincide.</li>
+</ul>
+
+<p>Por ejemplo, imprime del fichero <code>palabras.txt</code> solo aquellas líneas que contengan la cadena <code>mente</code>.</p>
+
+<pre >user@mypc:~$ grep &quot;mente&quot; palabras.txt </pre>
+
+</article></slide><slide class=''><hgroup><h2><code>grep</code></h2></hgroup><article  id="grep">
+
+<p>Para realizar la operación contraria, es decir, imprimir solo aquellas líneas que no contienen la cadena <code>mente</code>, podemos utilizar <code>grep</code> con la opción <code>-v</code>.</p>
+
+<pre >user@mypc:~$ grep -v &quot;mente&quot; palabras.txt </pre>
+
+</article></slide><slide class=''><hgroup><h2><code>tr [OPCIONES] PATRÓN1 PATRÓN2 &lt; FICHERO</code></h2></hgroup><article  id="tr-opciones-patron1-patron2-fichero">
+
+<p>El comando <code>tr</code> permite procesar un fichero de texto y transformar o realizar sustituciones entre los caracteres del patrón <code>PATRÓN1</code> con los caracteres del patrón <code>PATRÓN2</code>. Veamos algunos ejemplos de uso:</p>
+
+<p>Para procesar nuestro fichero de palabras y sustituir cualquier aparición de una <code>m</code> en una <code>M</code>, ejecutamos:</p>
+
+<pre >user@mypc:~$ tr &quot;m&quot; &quot;M&quot; &lt; palabras.txt </pre>
+
+</article></slide><slide class=''><hgroup><h2><code>tr</code></h2></hgroup><article  id="tr">
+
+<p>Para sustituir las vocales en minúsculas a mayúsculas, ejecutamos:</p>
+
+<pre >user@mypc:~$ tr &quot;aeiou&quot; &quot;AEIOU&quot; &lt; palabras.txt </pre>
+
+<p>Si queremos pasar a mayúsculas un texto escrito en minúsculas, podemos especificar un rango de caracteres (de la <em>a</em> a la <em>z</em>):</p>
+
+<pre >user@mypc:~$ tr &quot;a-z&quot; &quot;A-Z&quot; &lt; palabras.txt </pre>
+
+<p>Para sustituir cualquier dígito que encontremos por una <code>X</code>, podemos ejecutar:</p>
+
+<pre >user@mypc:~$ tr &quot;0-9&quot; &quot;X&quot; &lt; palabras.txt </pre>
+
+</article></slide><slide class=''><hgroup><h2><code>tr</code></h2></hgroup><article  id="tr-1">
+
+<p>Fíjate en el comportamiento de estos alias:</p>
+
+<ul>
+<li><code>a-z</code> para las letras del alfabeto en minúsculas</li>
+<li><code>A-Z</code> para las letras mayúsculas</li>
+<li><code>A-z</code> para el alfabeto completo en mayúsculas y minúsculas</li>
+<li><code>0-9</code> para los dígitos</li>
+<li>o incluso subconjuntos de estos caracteres como <code>a-m</code> y <code>5-9</code></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2><code>tr</code></h2></hgroup><article  id="tr-2">
+
+<p>Un uso muy del comando <code>tr</code> muy interesante para tareas de procesamiento de texto es utilizarlo para <em>tokenizar</em> o segmentar en palabras un fichero de texto. Para ello, necesitaremos especificar determinadas opciones de manera que sustityamos cualquier carácter que no sea <code>-c</code> una letra mayúscula o minúscula (<code>A-Za-z</code>) por un único (<code>-s</code>) retorno de carro (<code>\n</code>). Comprueba qué hace la siguiente intrucción:</p>
+
+<pre >user@mypc:~$ tr -sc &quot;A-Za-z&quot; &quot;\n&quot; &lt; texto.txt &gt; texto-tokenizado.txt</pre>
+
+</article></slide><slide class=''><hgroup><h2><code>tr</code></h2></hgroup><article  id="tr-3">
+
+<p>La instrucción anterior no tendrá en cuenta como palabras o <em>tokens</em> los caracteres con diacríticos propios del español o las secuencias de dígitos que encuentre. Para separar correctamente las palabras en español y considerar también como <em>tokens</em> los números, necesitamos modificar el primer patrón:</p>
+
+<pre >user@mypc:~$ tr -sc &quot;A-Za-zÁÉÍÓÚÜáéíóúüñÑ0-9&quot; &quot;\n&quot; &lt; texto.txt &gt; texto-tokenizado.txt</pre>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Entrada, salida y <em>pipelines</em> para encadenar comandos</h2></hgroup><article  id="entrada-salida-y-pipelines-para-encadenar-comandos">
+
+</article></slide><slide class=''><hgroup><h2>Encadenando herramientas</h2></hgroup><article  id="encadenando-herramientas">
+
+<p>Hasta ahora hemos visto comandos para realizar operaciones sencillas sobre ficheros. La mayoría de las herramientas de Unix son similares: consisten en herramientas pequeñas que realizan muy bien una operación muy concreta y determinada, y funcionan de la siguiente manera:</p>
+
+<ul>
+<li>toman uno o varios ficheros como entrada</li>
+<li>los manipulan; y</li>
+<li>generan un salida, que podemos mostrar por pantalla o redirigirla a otro sitio.</li>
+</ul>
+
+<p>La verdadera potencia y versatilidad de estas herramientas la obtenemos cuando encadenamos unas con otras, seleccionando como entrada de una de estas instrucciones la salida de otra. Para ello podemos hacer uso de algunos símbolos especiales que veremos a continuación.</p>
+
+</article></slide><slide class=''><hgroup><h2>Entrada <code>&lt;</code> [RUTA/]FICHERO</h2></hgroup><article  id="entrada-rutafichero">
+
+<p>La mayoría de los comandos de Unix que hemos visto hasta el momento toman como entrada el nombre de fichero que especifiquemos. En otros casos, es obligatorio especificar de manera explícita el fichero de entrada con el símbolo <code>&lt;</code>.</p>
+
+<pre >user@mypc:~$ cat &lt; palabras.txt        # equivalente a cat palabras  
+user@mypc:~$ sort -nr &lt; palabras.txt   # equivalente a sort -nr palabras.txt
+user@mypc:~$ tr &quot;a&quot; &quot;A&quot; &lt; palabras.txt # es obligatorio el uso de &lt;</pre>
+
+</article></slide><slide class=''><hgroup><h2>Salida <code>&gt;</code> [RUTA/]FICHERO</h2></hgroup><article  id="salida-rutafichero">
+
+<p>Hemos visto anteriormente que podemos redirigir la salida de un comando a un fichero de texto.</p>
+
+<p>Por ejemplo, para ordenar alfabéticamente el fichero <code>palabras.txt</code> y guardar el resultado en otro fichero de nueva creación llamado <code>palabras-ordenadas.txt</code>, ejecutamos la siguiente instrucción, indicando explícitamente la entrada y la salida.</p>
+
+<pre >user@mypc:~$ sort &lt; palabras.txt &gt; palabras-ordenadas.txt</pre>
+
+<p>Podemos redirigir la salida de dos maneras:</p>
+
+<ul>
+<li><code>&gt;</code> redirige la salida a un fichero. Si no existe, lo crea. Si existía previamente, lo sobreescribe.</li>
+<li><code>&gt;&gt;</code> redirige la salida a un fichero. Si no existe, lo crea. Si existe, concatena el resultado al contenido anterior.</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Tubería (<em>pipeline</em>) comando <code></h2><h3></code> comando</h3></hgroup><article  id="tuberia-pipeline-comando-comando">
+
+<p>Como hemos visto, muchas de las herramientas de Unix toman como entrada ficheros de texto, los procesan línea a línea ejecutando tareas sencillas y generan una salida. La verdadera potencia de estas herramientas radica en la posibilidad de encadenar varias de ellas, haciendo que una herramienta tome como entrada y procese la salida de otra herramienta que hemos ejecutado previamente. El <em>pegamento</em> que nos permite encadenar herramientas desde la línea de comandos es la tubería o <em>pipeline</em> <code>|</code>.</p>
+
+<p>Imaginemos que queremos procesar línea a línea una fichero de texto formado por un listado de palabras. Dicho listado contienen palabras desordenadas y numerosos duplicados. Podemos encadenar tres herramientas como <code>sort</code>, <code>uniq</code> y <code>grep</code> para generar un nuevo listado de palabras ordenadas, únicas y que contengan la cadena <code>mente</code> con el siguiente comando:</p>
+
+<pre >user@mypc:~$ sort palabras.txt | uniq | grep &quot;mente&quot; &gt; ordenadas.txt</pre>
+
+<p>Podemos realizar la misma operación sin necesidad de almacenar la salida en ningún fichero. Para revisar el resultado, nos basta con redirigir la salida al paginador <code>less</code> del siguiente modo:</p>
+
+<pre >user@mypc:~$ sort palabras.txt &gt; | uniq | grep &quot;mente&quot; | less</pre>
+
+</article></slide><slide class=''><hgroup><h2>Ejemplos de la potencia de los <em>pipelines</em></h2></hgroup><article  id="ejemplos-de-la-potencia-de-los-pipelines">
+
+<p>Procesamos un fichero de texto línea a línea, imprimiendo solo las líneas que contengan la secuencia de caracteres <em>mente</em> (vamos a asumir que son palabras susceptibles de ser adverbios en español) y, para facilitar su localización en el texto original, las imprimimos con el número de línea.</p>
+
+<pre >user@mypc:~$ cat -n texto.txt | grep &quot;mente&quot; </pre>
+
+<p>Procesamos un fichero de texto línea a línea, segmentándolo en palabras, buscando aquellas palabras que contengan la cadena <em>mente</em>, calculamos su frecuencia y lo redirigimos al paginador.</p>
+
+<pre >user@mypc:~$ cat texto.txt | tr -sc &quot;a-zA-Z0-9&quot; &quot;\n&quot; | grep &quot;mente&quot; | sort | uniq -c | less</pre>
+
+<p>Procesamos un fichero de texto línea a línea, segmentándolo en palabras, ordenamos alfabéticamente, contabilizamos frecuencias de aparición, las ordenamos de mayor a menor y las almacenamos en un fichero.</p>
+
+<pre >user@mypc:~$ cat texto.txt | tr -sc &quot;a-zA-Z0-9&quot; &quot;\n&quot; | sort | uniq -c | sort -nr &gt; texto.pals.frec.txt</pre></article></slide>
 
 
   <slide class="backdrop"></slide>
