@@ -11,4 +11,4 @@ output: html_document
 
 - Herramientas de [Unix para manejar ficheros](unix-files.html).
 - Herramientas de [Unix para procesar texto](unix-text.html).
-- [Expresiones regulares](regexes.html).
+- [Expresiones regulares](regexes.html) y [ejemplos](ejemplos.zip).

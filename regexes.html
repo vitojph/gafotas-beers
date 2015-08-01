@@ -98,8 +98,6 @@
 
 <p>Se trata de un un lenguaje formal que nos permite especificar patrones para buscar y sustituir cadenas de texto.</p>
 
-<p>Para crear una expresión regular debemos utilizar una sintaxis específica, es decir, caracteres especiales y reglas de construcción.</p>
-
 <p>Muchas herramientas de UNIX (p. ej., <code>grep</code> y todas sus variantes (<code>egrep</code>, <code>fgrep</code>) aceptan patrones de búsqueda basados en expresiones regulares, así como muchos editores de texto.</p>
 
 </article></slide><slide class=''><hgroup><h2>Herramientas <em>online</em></h2></hgroup><article  id="herramientas-online">
@@ -107,10 +105,10 @@
 <p>Para nuestras pruebas iniciales, vamos a jugar con un par de herramientas <em>online</em>:</p>
 
 <ul>
-<li><p>RegexPal <a id="fnref1" href="#fn1"><sup>1</sup></a></p></li>
-<li><p>RegExr <a id="fnref2" href="#fn2"><sup>2</sup></a></p></li>
-<li><p>Refiddle <a id="fnref3" href="#fn3"><sup>3</sup></a></p></li>
-<li><p>Rubular <a id="fnref4" href="#fn4"><sup>4</sup></a></p></li>
+<li><p><a href='http://regexpal.com' title=''>RegexPal</a></p></li>
+<li><p><a href='http://www.regexr.com' title=''>RegExr</a></p></li>
+<li><p><a href='http://refiddle.com' title=''>Refiddle</a></p></li>
+<li><p><a href='http://rubular.com' title=''>Rubular</a></p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Expresiones regulares sencillas</h2></hgroup><article  id="expresiones-regulares-sencillas">
@@ -119,7 +117,7 @@
 
 <ul>
 <li><p>La regex <code>r</code> hace <em>matching</em> con cualquier <em>r</em> que aparezca en el texto.</p></li>
-<li><p>La regex <code>the</code> hace <em>matching</em> con cualquier palabra que contenga la subcadena <em>the</em> como en <em>the</em>, <em>there</em>, <em>aesthetic</em>, <em>farther</em>, <em>smoothed</em>.</p></li>
+<li><p>La regex <code>the</code> hace <em>matching</em> con cualquier palabra que contenga la subcadena <em>the</em> como en <em>the</em>, <em>there</em>, <em>aesthetic</em>, <em>further</em>, <em>smoothed</em>.</p></li>
 <li><p>La regex <code>mente</code> hace <em>matching</em> con cualquier ocurrencia de palabra que contenga esa cadena tal cual, en palabras como <em>mente</em>, <em>mentes</em>, <em>obviamente</em>, <em>últimamente</em>, <em>mentecato</em>, <em>Armenteros</em>, etc.</p></li>
 <li><p>La regex <code>he visto una vaca</code> hace <em>matching</em> con cualquier secuencia de caracteres que contenga dicha subcadena.</p></li>
 </ul>
@@ -232,7 +230,7 @@
 <p>Otros metacaracteres importantes permiten especificar el inicio y final de la línea que estamos procesando:</p>
 
 <ul>
-<li><code>^</code>: inicio de línea</li>
+<li><code>^</code>: inicio de línea. No lo confundas con la negación de una disyunción <code>[^A-Z]</code></li>
 <li><code>$</code>: final de la línea</li>
 <li><code>.</code>: cualquier carácter</li>
 </ul>
@@ -248,12 +246,12 @@
 
 </article></slide><slide class=''><hgroup><h2>Otros metacaracteres complejos</h2></hgroup><article  id="otros-metacaracteres-complejos">
 
-<p>Por último, existen otros metacaracteres muy útiles que funcionan desde la línea de comandos solo si activamos el modo <em>expresiones regulares de Perl</em>.</p>
+<p>Por último, existen otros metacaracteres muy útiles que funcionan desde la línea de comandos solo si activamos el modo <em>expresiones regulares de Perl</em> (<code>grep -P</code>).</p>
 
 <ul>
 <li><p><code>\s</code> significa <em>cualquier espacio en blanco o tabulador</em>.</p></li>
 <li><p><code>\S</code> significa <em>cualquier carácter que no sea espacio en blanco o tabulador</em>.</p></li>
-<li><p><code>\w</code> significa <em>cualquier carácter alfanumérico (letras y dígitos)</em>.</p></li>
+<li><p><code>\w</code> significa <em>cualquier carácter alfanumérico (letras y dígitos)</em>, excepto diacríticos :-/</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Otros metacaracteres complejos</h2></hgroup><article  id="otros-metacaracteres-complejos-1">
@@ -261,7 +259,7 @@
 <ul>
 <li><p><code>\W</code> significa <em>cualquier carácter que no sea alfanumérico</em>.</p></li>
 <li><p><code>\d</code> significa <em>cualquier carácter numérico</em> (equivalente a <code>[0-9]</code>).</p></li>
-<li><p><code>\D</code> significa <em>cualquier carácter que no sea numérico</em> (letras + espacios en blanco + signos de puntuación).</p></li>
+<li><p><code>\D</code> significa <em>cualquier carácter que no sea numérico</em> (letras, con y sin diacríticos :-) + espacios en blanco + signos de puntuación).</p></li>
 <li><p><code>\b</code> sirve para indicar el <em>límite de una palabra</em>.</p></li>
 </ul>
 
@@ -278,15 +276,12 @@
 </article></slide><slide class=''><hgroup><h2>Quiero más</h2></hgroup><article  id="quiero-mas">
 
 <ul>
-<li><p><em>Introducing Regular Expressions</em> <a id="fnref5" href="#fn5"><sup>5</sup></a></p></li>
-<li><p><em>Masteringing Regular Expressions</em> <a id="fnref6" href="#fn6"><sup>6</sup></a></p></li>
-<li><p><em>Regular Expressions Cookbook</em> <a id="fnref7" href="#fn7"><sup>7</sup></a></p></li>
-</ul>
-
-<ul>
-<li><p><em>Ayuda sobre expressiones regulares de Mozilla</em> <a id="fnref8" href="#fn8"><sup>8</sup></a></p></li>
-<li><p>Wikipedia: Expresión regular <a id="fnref9" href="#fn9"><sup>9</sup></a></p></li>
-<li><p>regular-expressions.info <a id="fnref10" href="#fn10"><sup>10</sup></a></p></li>
+<li><p><a href='http://cdn.oreilly.com/oreilly/booksamplers/9781449392680_sampler.pdf' title=''>Introducing Regular Expressions</a></p></li>
+<li><p><a href='http://cdn.oreilly.com/oreilly/booksamplers/9780596528126_sampler.pdf' title=''>Masteringing Regular Expressions</a></p></li>
+<li><p><a href='http://cdn.oreilly.com/oreilly/booksamplers/9781449319434_sampler.pdf' title=''>Regular Expressions Cookbook</a></p></li>
+<li><p><a href='https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/RegExp#Special_characters_in_regular_expressions' title=''>Ayuda sobre expressiones regulares de Mozilla</a></p></li>
+<li><p><a href='http://es.wikipedia.org/wiki/Expresi%C3%B3n_regular' title=''>Wikipedia: Expresión regular</a></p></li>
+<li><p><a href='http://www.regular-expressions.info' title=''>http://www.regular-expressions.info</a></p></li>
 </ul></article></slide>
 
 

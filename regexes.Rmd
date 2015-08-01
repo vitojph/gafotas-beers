@@ -12,21 +12,19 @@ Las expresiones regulares (*regular expressions* o *regexes* en inglés) son el 
 
 Se trata de un un lenguaje formal que nos permite especificar patrones para buscar y sustituir cadenas de texto. 
 
-Para crear una expresión regular debemos utilizar una sintaxis específica, es decir, caracteres especiales y reglas de construcción. 
-
 Muchas herramientas de UNIX (p. ej., `grep` y todas sus variantes (`egrep`, `fgrep`) aceptan patrones de búsqueda basados en expresiones regulares, así como muchos editores de texto. 
 
 ## Herramientas *online*
 
 Para nuestras pruebas iniciales, vamos a jugar con un par de herramientas *online*:
 
-- RegexPal [^regexpal]
+- [RegexPal](http://regexpal.com)
 
-- RegExr [^regexr]
+- [RegExr](http://www.regexr.com)
 
-- Refiddle [^refiddle]
+- [Refiddle](http://refiddle.com)
 
-- Rubular [^rubular]
+- [Rubular](http://rubular.com)
 
 
 ## Expresiones regulares sencillas
@@ -35,7 +33,7 @@ La expresión regular más sencilla consiste en indicar la cadena exacta que que
 
 - La regex `r` hace *matching* con cualquier *r* que aparezca en el texto.
 
-- La regex `the` hace *matching* con cualquier palabra que contenga la subcadena *the* como en *the*, *there*, *aesthetic*, *farther*, *smoothed*.
+- La regex `the` hace *matching* con cualquier palabra que contenga la subcadena *the* como en *the*, *there*, *aesthetic*, *further*, *smoothed*.
 
 - La regex `mente` hace *matching* con cualquier ocurrencia de palabra que contenga esa cadena tal cual, en palabras como *mente*, *mentes*, *obviamente*, *últimamente*, *mentecato*, *Armenteros*, etc.
 
@@ -136,7 +134,7 @@ Existe unos cuanto metacaracteres que nos permiten cuantificar las expresiones r
 
 Otros metacaracteres importantes permiten especificar el inicio y final de la línea que estamos procesando:
     
-- `^`: inicio de línea\marginnote{No hay que confundirlo con la negación de una disyunción, p. ej. \texttt{[\^{}A-Z]}.} 
+- `^`: inicio de línea. No lo confundas con la negación de una disyunción `[^A-Z]` 
 - `$`: final de la línea
 - `.`: cualquier carácter
 
@@ -154,13 +152,13 @@ Otros metacaracteres importantes permiten especificar el inicio y final de la l�
 
 ## Otros metacaracteres complejos
 
-Por\marginnote{Para ello, hay que ejecutar la opción \texttt{grep -P}.} último, existen otros metacaracteres muy útiles que funcionan desde la línea de comandos solo si activamos el modo *expresiones regulares de Perl*. 
+Por último, existen otros metacaracteres muy útiles que funcionan desde la línea de comandos solo si activamos el modo *expresiones regulares de Perl* (`grep -P`). 
 
 - `\s` significa *cualquier espacio en blanco o tabulador*.
 
 - `\S` significa *cualquier carácter que no sea espacio en blanco o tabulador*.
 
-- `\w`\marginnote{Ojo, no captura vocales con diacríticos} significa *cualquier carácter alfanumérico (letras y dígitos)*.
+- `\w` significa *cualquier carácter alfanumérico (letras y dígitos)*, excepto diacríticos :-/
 
 ## Otros metacaracteres complejos
 
@@ -168,7 +166,7 @@ Por\marginnote{Para ello, hay que ejecutar la opción \texttt{grep -P}.} último
 
 - `\d` significa *cualquier carácter numérico* (equivalente a `[0-9]`).
 
-- `\D`\marginnote{Este sí captura vocales con diacríticos} significa *cualquier carácter que no sea numérico* (letras + espacios en blanco + signos de puntuación).
+- `\D` significa *cualquier carácter que no sea numérico* (letras, con y sin diacríticos :-) + espacios en blanco + signos de puntuación).
 
 - `\b` sirve para indicar el *límite de una palabra*.
 
@@ -185,36 +183,14 @@ Estos metacaracteres se pueden combinar con los cuantificadores, de manera que:
 
 ## Quiero más
 
-- *Introducing Regular Expressions* [^introregex]
+- [Introducing Regular Expressions](http://cdn.oreilly.com/oreilly/booksamplers/9781449392680_sampler.pdf)
 
-- *Masteringing Regular Expressions* [^masterregex]
+- [Masteringing Regular Expressions](http://cdn.oreilly.com/oreilly/booksamplers/9780596528126_sampler.pdf)
 
-- *Regular Expressions Cookbook* [^regexcookbook]
+- [Regular Expressions Cookbook](http://cdn.oreilly.com/oreilly/booksamplers/9781449319434_sampler.pdf)
 
+- [Ayuda sobre expressiones regulares de Mozilla](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/RegExp#Special_characters_in_regular_expressions)
 
-[^introregex]: *Introducing Regular Expressions* http://cdn.oreilly.com/oreilly/booksamplers/9781449392680_sampler.pdf
+- [Wikipedia: Expresión regular](http://es.wikipedia.org/wiki/Expresi%C3%B3n_regular)
 
-[^masterregex]: *Masteringing Regular Expressions* http://cdn.oreilly.com/oreilly/booksamplers/9780596528126_sampler.pdf
-
-[^regexcookbook]: *Regular Expressions Cookbook* http://cdn.oreilly.com/oreilly/booksamplers/9781449319434_sampler.pdf
-
-[^regexmozilla]: *Ayuda sobre expressiones regulares de Mozilla* https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/RegExp#Special_characters_in_regular_expressions
-
-[^regex-wiki]: Wikipedia: Expresión regular http://es.wikipedia.org/wiki/Expresi%C3%B3n_regular
-
-[^regexinfo]: http://www.regular-expressions.info
-
-[^regexr]: http://www.regexr.com
-
-[^regexpal]: http://regexpal.com.
-
-[^refiddle]: http://refiddle.com
-
-[^rubular]: http://rubular.com
-
-
-- *Ayuda sobre expressiones regulares de Mozilla* [^regexmozilla]
-
-- Wikipedia: Expresión regular [^regex-wiki]
-
-- regular-expressions.info [^regexinfo]
+- http://www.regular-expressions.info
